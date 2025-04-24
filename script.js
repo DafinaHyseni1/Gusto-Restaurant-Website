@@ -92,3 +92,24 @@ function toggleMenu() {
     const menu = document.querySelector(".nav-links");
     menu.classList.toggle("open"); // Toggle the 'open' class to control the display
 }
+
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Ndalo rifreskimin e faqes
+  
+    // Merr të dhënat nga forma
+    const name = this.name.value;
+    const email = this.email.value;
+    const message = this.message.value;
+  
+    // Mund t'i dërgosh në një server ose thjesht t'i shfaqësh
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Message:", message);
+  
+    // Shfaq një mesazh suksesi
+    document.getElementById("formResponse").textContent = "Thank you! Your message has been sent.";
+  
+    // Fshij të dhënat e formës
+    this.reset();
+  });
+  
