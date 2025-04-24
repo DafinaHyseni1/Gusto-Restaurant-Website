@@ -1,0 +1,766 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    height: 100%;
+    overflow-x: hidden; 
+}
+
+
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('gustoItalian.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e74c3c;
+    padding: 0px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover, .btn:hover {
+    color: #e74c3c;
+}
+
+.btn {
+    background: #e74c3c;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Home Content */
+.home-content {
+    max-width: 600px;
+    text-align: center;
+}
+
+.home h1 {
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.home p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.explore-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #e74c3c;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.explore-btn:hover {
+    background: #c0392b;
+}
+/* RESPONSIVE DESIGN FOR MOBILE */
+
+/* Adjustments for max-width 768px (tablets, medium-sized phones) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;  /* Force items to be in a single row */
+        align-items: center;
+        height: auto;
+        padding: 10px 0; /* Reduced padding */
+        justify-content: space-between; /* Distribute the items evenly */
+    }
+
+    nav ul {
+        display: flex;
+        gap: 10px; /* Reduced gap */
+        padding: 0;
+        margin: 0;
+        flex-wrap: wrap; /* Allow wrapping if necessary */
+    }
+
+    nav ul li a {
+        font-size: 14px; /* Smaller font size for links */
+        padding: 5px 10px; /* Adjust padding for better fit */
+    }
+
+    .logo {
+        font-size: 18px; /* Smaller logo size */
+        margin-right: 10px; /* Space between logo and menu */
+    }
+
+    .menu-icon {
+        font-size: 24px; /* Smaller hamburger icon */
+        display: none; /* Keep it hidden if menu is inline */
+    }
+}
+
+/* Adjustments for smaller mobile screens (max-width 480px) */
+@media (max-width: 480px) {
+    nav {
+        padding: 8px 0; /* Even smaller padding */
+    }
+
+    nav ul li a {
+        font-size: 12px; /* Smaller font size for links */
+        padding: 5px 8px; /* Adjust padding for better fit */
+    }
+
+    .logo {
+        font-size: 16px; /* Even smaller logo size */
+    }
+
+    .menu-icon {
+        font-size: 20px; /* Even smaller hamburger icon */
+    }
+}
+
+
+/* About Section Styles */
+.about {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about-header h2 {
+    font-size: 40px;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+.about-header p {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.about-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.gallery-item {
+    width: 350px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.close {
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #e74c3c;
+}
+
+.about-story {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+/* For mobile screens (up to 480px) */
+@media (max-width: 480px) {
+    .about-header h2 {
+        font-size: 28px;
+    }
+
+    .about-header p {
+        font-size: 14px;
+    }
+
+    .about-gallery {
+        gap: 15px; /* Smaller gap */
+    }
+
+    .gallery-item {
+        width: 90%; /* Take up even more width */
+        height: 180px; /* Adjust height further */
+    }
+
+    .about-story {
+        font-size: 14px;
+        margin: 15px;
+    }
+}
+
+/* For extra small screens (less than 320px) */
+@media (max-width: 320px) {
+    .about-header h2 {
+        font-size: 24px;
+    }
+
+    .about-header p {
+        font-size: 12px;
+    }
+
+    .about-gallery {
+        gap: 10px; /* Even smaller gap */
+    }
+
+    .gallery-item {
+        width: 100%; /* Take up full width */
+        height: 150px; /* Further adjust height */
+    }
+
+    .about-story {
+        font-size: 12px;
+        margin: 10px;
+    }
+}
+.chefs-container {
+    margin-top: 90px;
+
+}
+
+.chefs h3 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.chefs {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.chef {
+    width: 250px;
+    text-align: center;
+}
+
+.chef img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.chef h4 {
+    font-size: 20px;
+    color: #e74c3c;
+    margin-bottom: 5px;
+}
+
+.chef p {
+    font-size: 16px;
+    color: #777;
+}
+
+.btn2 {
+    background: #e74c3c;
+    padding: 12px 20px;
+    border-radius: 5px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #c0392b;
+}
+/* For mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .chefs {
+        justify-content: center; /* Center chefs for smaller screens */
+        gap: 20px; /* More space between chef profiles */
+    }
+
+    .chef {
+        width: 150px; /* Make each chef profile smaller */
+    }
+
+    .chef img {
+        height: 180px; /* Adjust image height */
+    }
+
+    .chef h4 {
+        font-size: 18px; /* Smaller font size for names */
+    }
+
+    .chef p {
+        font-size: 14px; /* Smaller font size for descriptions */
+    }
+
+    .btn2 {
+        font-size: 14px; /* Adjust button font size */
+        padding: 10px 15px; /* Adjust padding for button */
+    }
+}
+
+/* For extra small screens (max-width: 320px) */
+@media (max-width: 320px) {
+    .chefs {
+        flex-direction: column; /* Stack chef profiles vertically */
+        align-items: center; /* Center them */
+    }
+
+    .chef {
+        width: 70%; /* Take full width on very small screens */
+    }
+
+    .chef img {
+        height: 150px; /* Adjust height for images */
+    }
+
+    .chef h4 {
+        font-size: 16px; /* Smaller font size for names */
+    }
+
+    .chef p {
+        font-size: 12px; /* Smaller font size for descriptions */
+    }
+
+    .btn2 {
+        font-size: 12px; /* Adjust button font size */
+        padding: 8px 12px; /* Adjust padding for button */
+    }
+}
+
+.menu {
+    background-color:#f9f9f9;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.menu-header h2 {
+    font-size: 40px;
+    color:#e74c3c;
+    margin-bottom: 10px;
+}
+
+.menu-header p {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    background: rgb(235, 235, 235);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 250px;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.menu-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-info {
+    padding: 20px;
+}
+
+.menu-info h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin: 10px 0;
+}
+
+.menu-info p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+/* Map Section Styles */
+.map {
+    padding: 60px 0;
+    text-align: center;
+    background-color:#f9f9f9;
+}
+
+.map h2 {
+    font-size: 36px;
+    color:#e74c3c;
+    margin-bottom: 10px;
+}
+
+.map p {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.map-container iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.contact {
+    padding: 60px 0;
+    background-color:#f9f9f9;
+    text-align: center;
+}
+
+.contact-header h2 {
+    font-size: 40px;
+    color: #e74c3c;
+    margin-bottom: 30px;
+}
+
+
+.contact-details p {
+    color: #777;
+
+}
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.contact-details {
+    text-align: left;
+    font-size: 18px;
+}
+
+.contact-details h3 {
+    font-size: 22px;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #c0392b;
+}
+@media (max-width: 480px) {
+    .contact-info {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center; /* Stack items vertically and center */
+    }
+
+    .contact-details {
+        font-size: 14px; /* Smaller font size for mobile */
+        text-align: center; /* Center contact details */
+    }
+
+    .contact-header h2 {
+        font-size: 26px; /* Smaller header font size for mobile */
+        margin-bottom: 20px; /* Reduced margin for better spacing */
+    }
+
+    .contact-form form {
+        max-width: 90%; /* Make form wider on mobile */
+        margin-top: 20px; /* Add space at the top */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px; /* Smaller font size for inputs */
+        padding: 8px; /* Reduced padding for smaller screens */
+    }
+
+    .contact-form button {
+        font-size: 14px; /* Smaller button font size */
+        padding: 8px 16px; /* Adjust button padding */
+    }
+
+    .contact-info {
+        margin-bottom: 20px; /* Adjust bottom margin for smaller screens */
+    }
+}
+
+/* For extra small screens (max-width: 320px) */
+@media (max-width: 320px) {
+    .contact-info {
+        gap: 15px; /* Reduce gap between items */
+    }
+
+    .contact-details {
+        font-size: 12px; /* Further reduce font size */
+        text-align: center; /* Keep text centered */
+    }
+
+    .contact-header h2 {
+        font-size: 22px; /* Further reduce header font size */
+        margin-bottom: 15px; /* Adjust margin */
+    }
+
+    .contact-form form {
+        max-width: 95%; /* Increase form width for extra small screens */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 12px; /* Further reduce font size for inputs */
+    }
+
+    .contact-form button {
+        font-size: 12px; /* Smallest font size for buttons */
+        padding: 6px 12px; /* Smaller padding for buttons */
+    }
+}
+.footer {
+    margin-top: 60px;
+    background-color: #f9f9f9;
+    color: rgb(10, 10, 10);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.footer-logo h3 {
+    font-size: 30px;
+    color: #e74c3c;
+}
+
+.footer-logo p {
+    font-size: 18px;
+    color: #bbb;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 20px;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #e74c3c;
+}
+
+.footer-contact p {
+    font-size: 16px;
+    color: #bbb;
+    margin-bottom: 5px;
+}
+
+.footer-bottom {
+    padding: 10px 0;
+    color: #bbb;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+/* Butoni për të hapur formën */
+.reserve-btn {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Kontejneri i formës */
+.reservation-form {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Dizajni i formës në formë katrore */
+#reservationForm {
+    background: white;
+    padding: 30px;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Stilizimi i inputeve */
+#reservationForm input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Stilizimi i butonit Submit */
+#reservationForm button {
+    width: 100%;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Butoni i mbylljes */
+.close-btn {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}

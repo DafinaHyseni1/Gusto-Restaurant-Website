@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gusto Italian - Authentic Italian Cuisine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Gusto Italian</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#map">Find Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="javascript:void(0)" class="btn" onclick="openReservationForm()">Reserve a Table</a></li>
+            </ul>
+            <!-- Forma e rezervimit -->
+<div id="reservation-form" class="reservation-form">
+    <div class="container">
+        <form id="reservationForm" onsubmit="submitReservation(event)">
+            <h3>Reserve Your Table</h3>
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+            
+            <label for="time">Time:</label>
+            <input type="time" id="time" required>
+
+            <label for="guests">Guests:</label>
+            <input type="number" id="guests" min="1" max="10" placeholder="Guests" required>
+
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" placeholder="Full Name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Your Email" required>
+
+            <button type="submit">Submit Reservation</button>
+            <button type="button" onclick="closeReservationForm()">Cancel</button>
+        </form>
+    </div>
+</div>
+        </nav>
+        <section class="home" id="home">
+            <div class="home-content">
+                <h1>Welcome to Gusto Italian</h1>
+                <p>Experience the authentic flavors of Italy, crafted with passion and tradition.</p>
+                <a href="#menu" class="explore-btn">Explore Our Menu</a>
+            </div>
+        </section>
+    </header>
+    <section class="about" id="about">
+        <div class="about-header">
+            <h2>About Gusto </h2>
+            <p>Experience the heart of Italy with every bite. Our tradition, passion, and exquisite cuisine make every visit unforgettable.</p>
+        </div>
+    
+        <!-- Restaurant Gallery -->
+        <div class="about-gallery">
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="about.jpg" alt="Elegant Interior" class="gallery-img">
+            </div>
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="about2.jpg" alt="Fine Dining Area" class="gallery-img">
+            </div>
+            <div class="gallery-item" onclick="openModal(this)">
+                <img src="about3.jpg" alt="Beautiful Outdoor Seating" class="gallery-img">
+            </div>
+        </div>
+       
+        <!-- Modal for Full-Size Image -->
+        <div id="imageModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" class="modal-content">
+        </div>
+    
+        <!-- Restaurant Story -->
+        <div class="about-story">
+            <h3>Our Story</h3>
+            <p>At Gusto Italian, we blend authentic Italian flavors with a modern twist. From our hand-picked ingredients to our signature recipes, we aim to bring Italy to your table.</p>
+            <p>Our chefs use only the finest ingredients, and our welcoming atmosphere ensures that every meal is a delightful experience.</p>
+        </div>
+          <!-- Reservation Button -->
+          <li><a href="javascript:void(0)" class="btn" onclick="openReservationForm()">Reserve a Table</a></li>
+    
+        <!-- Meet Our Chefs -->
+        <div class="chefs-container">
+            <h3>Meet Our Chefs</h3>
+            <div class="chefs">
+                <div class="chef">
+                    <img src="chef1.png" alt="Chef Marco Rossi">
+                    <h4>Chef Marco Rossi</h4>
+                    <p>With over 20 years of experience, Chef Marco brings an authentic taste of Italy to every dish.</p>
+                </div>
+                <div class="chef">
+                    <img src="chef2.jfif" alt="Chef Sofia Romano">
+                    <h4>Chef Sofia Romano</h4>
+                    <p>Specializing in Italian desserts, Chef Sofia’s creations are both visually stunning and delicious.</p>
+                </div>
+                <div class="chef">
+                    <img src="chef3.jfif" alt="Chef Antonio Moretti">
+                    <h4>Chef Antonio Moretti</h4>
+                    <p>Known for his mastery of wood-fired pizzas, Chef Antonio ensures every pizza is made to perfection.</p>
+                </div>
+            </div>
+        </div>
+    
+    <section class="menu" id="menu">
+        <div class="menu-header">
+            <h2>Our Menu</h2>
+            <p>Discover the authentic flavors of Italy in every bite.</p>
+        </div>
+        <div class="menu-items">
+            <!-- Appetizers -->
+            <div class="menu-item">
+                <img src="Bruschetta.png" alt="Bruschetta" class="menu-img">
+                <div class="menu-info">
+                    <h3>Bruschetta al Pomodoro</h3>
+                    <p>Grilled bread topped with fresh tomatoes, basil, and garlic.</p>
+                    <span class="price">$7.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Caprese.png" alt="Caprese Salad" class="menu-img">
+                <div class="menu-info">
+                    <h3>Caprese Salad</h3>
+                    <p>Fresh mozzarella, tomatoes, basil, drizzled with balsamic glaze.</p>
+                    <span class="price">$9.99</span>
+                </div>
+            </div>
+    
+            <!-- Main Courses -->
+            <div class="menu-item">
+                <img src="Pasta-Carbonara-Recipe.jpg" alt="Pasta" class="menu-img">
+                <div class="menu-info">
+                    <h3>Pasta Carbonara</h3>
+                    <p>A creamy pasta dish with pancetta, eggs, and parmesan.</p>
+                    <span class="price">$12.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="lasagna-bolognese.png" alt="Lasagna" class="menu-img">
+                <div class="menu-info">
+                    <h3>Lasagna Bolognese</h3>
+                    <p>Layered pasta with rich meat sauce, béchamel, and cheese.</p>
+                    <span class="price">$14.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="pizza.png" alt="Pizza" class="menu-img">
+                <div class="menu-info">
+                    <h3>Margherita Pizza</h3>
+                    <p>A classic pizza topped with mozzarella, tomatoes, and basil.</p>
+                    <span class="price">$14.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Gnocchi.png" alt="Gnocchi" class="menu-img">
+                <div class="menu-info">
+                    <h3>Gnocchi alla Sorrentina</h3>
+                    <p>Soft potato gnocchi baked in marinara sauce with mozzarella.</p>
+                    <span class="price">$13.99</span>
+                </div>
+            </div>
+    
+            <!-- Risottos -->
+            <div class="menu-item">
+                <img src="Mushroom-Risotto-ai-Funghi-PIC1.jpg" alt="Risotto" class="menu-img">
+                <div class="menu-info">
+                    <h3>Risotto ai Funghi</h3>
+                    <p>Risotto with wild mushrooms and a touch of truffle oil.</p>
+                    <span class="price">$16.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Dalmatian-Seafood-Risotto-735x965.jpg" alt="Seafood Risotto" class="menu-img">
+                <div class="menu-info">
+                    <h3>Seafood Risotto</h3>
+                    <p>Risotto with shrimp, calamari, mussels, and a hint of lemon.</p>
+                    <span class="price">$18.99</span>
+                </div>
+            </div>
+    
+            <!-- Desserts -->
+            <div class="menu-item">
+                <img src="tiramisu.jpg" alt="Tiramisu" class="menu-img">
+                <div class="menu-info">
+                    <h3>Tiramisu</h3>
+                    <p>A classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.</p>
+                    <span class="price">$6.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Cannoli.png" alt="Cannoli" class="menu-img">
+                <div class="menu-info">
+                    <h3>Cannoli Siciliani</h3>
+                    <p>Crispy pastry tubes filled with sweet ricotta and chocolate chips.</p>
+                    <span class="price">$5.99</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="PannaCotta.png" alt="Panna Cotta" class="menu-img">
+                <div class="menu-info">
+                    <h3>Panna Cotta</h3>
+                    <p>A creamy Italian dessert served with a berry compote.</p>
+                    <span class="price">$7.49</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="torta-della-nonna-1-5.jpg" alt="Torta della Nonna" class="menu-img">
+                <div class="menu-info">
+                    <h3>Torta della Nonna</h3>
+                    <p>A traditional Italian dessert with a creamy custard filling, encased in a buttery pastry.</p>
+                    <span class="price">$6.50</span>
+                </div>
+        </div>
+    </section>
+   
+      
+    
+    <section class="map" id="map">
+        <h2>Find Us</h2>
+        <p>We are located in the heart of Italy, ready to serve you with delicious authentic Italian dishes.</p>
+        <iframe 
+            src="https://www.google.com/maps?q=Milan&output=embed" 
+            width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </section>
+    <section class="contact" id="contact">
+        <div class="contact-header">
+            <h2>Contact Us</h2>
+        </div>
+    
+        <div class="contact-info">
+            <div class="contact-details">
+                <h3>Our Address</h3>
+                <p>Via Roma, 123, Milan, Italy</p>
+            </div>
+            <div class="contact-details">
+                <h3>Phone</h3>
+                <p>+39 02 1234 5678</p>
+            </div>
+            <div class="contact-details">
+                <h3>Email</h3>
+                <p>info@gustoitalian.com</p>
+            </div>
+        </div>
+    
+        <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form action="your-form-processing-url" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>Gusto Italian</h3>
+                <p>Authentic Italian Cuisine</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#reservations">Book a Table</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p><strong>Address:</strong> Via Roma, 123, Milan, Italy</p>
+                <p><strong>Phone:</strong> +39 02 1234 5678</p>
+                <p><strong>Email:</strong> info@gustoitalian.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Gusto Italian. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
