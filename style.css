@@ -19,7 +19,6 @@ header {
     text-align: center;
 }
 
-/* Navigation Bar */
 nav {
     position: fixed;
     top: 0;
@@ -68,7 +67,6 @@ nav ul li a:hover, .btn:hover {
     text-decoration: none;
 }
 
-/* Home Content */
 .home-content {
     max-width: 600px;
     text-align: center;
@@ -100,64 +98,60 @@ nav ul li a:hover, .btn:hover {
 .explore-btn:hover {
     background: #c0392b;
 }
-/* RESPONSIVE DESIGN FOR MOBILE */
 
-/* Adjustments for max-width 768px (tablets, medium-sized phones) */
 @media (max-width: 768px) {
     nav {
-        flex-direction: row;  /* Force items to be in a single row */
+        flex-direction: row; 
         align-items: center;
         height: auto;
-        padding: 10px 0; /* Reduced padding */
-        justify-content: space-between; /* Distribute the items evenly */
+        padding: 10px 0; 
+        justify-content: space-between; 
     }
 
     nav ul {
         display: flex;
-        gap: 10px; /* Reduced gap */
+        gap: 10px; 
         padding: 0;
         margin: 0;
-        flex-wrap: wrap; /* Allow wrapping if necessary */
+        flex-wrap: wrap; 
     }
 
     nav ul li a {
-        font-size: 14px; /* Smaller font size for links */
-        padding: 5px 10px; /* Adjust padding for better fit */
+        font-size: 14px; 
+        padding: 5px 10px; 
     }
 
     .logo {
-        font-size: 18px; /* Smaller logo size */
-        margin-right: 10px; /* Space between logo and menu */
+        font-size: 18px; 
+        margin-right: 10px; 
     }
 
     .menu-icon {
-        font-size: 24px; /* Smaller hamburger icon */
+        font-size: 24px; 
         display: none; /* Keep it hidden if menu is inline */
     }
 }
 
-/* Adjustments for smaller mobile screens (max-width 480px) */
 @media (max-width: 480px) {
     nav {
-        padding: 8px 0; /* Even smaller padding */
+        padding: 8px 0; 
     }
 
     nav ul li a {
-        font-size: 12px; /* Smaller font size for links */
-        padding: 5px 8px; /* Adjust padding for better fit */
+        font-size: 12px; 
+        padding: 5px 8px; 
     }
 
     .logo {
-        font-size: 16px; /* Even smaller logo size */
+        font-size: 16px; 
     }
 
     .menu-icon {
-        font-size: 20px; /* Even smaller hamburger icon */
+        font-size: 20px; 
     }
 }
 
 
-/* About Section Styles */
 .about {
     background-color: #f9f9f9;
     padding: 60px 0;
@@ -203,7 +197,6 @@ nav ul li a:hover, .btn:hover {
     transform: scale(1.05);
 }
 
-/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -247,7 +240,6 @@ nav ul li a:hover, .btn:hover {
     line-height: 1.6;
     margin-bottom: 40px;
 }
-/* For mobile screens (up to 480px) */
 @media (max-width: 480px) {
     .about-header h2 {
         font-size: 28px;
@@ -258,12 +250,12 @@ nav ul li a:hover, .btn:hover {
     }
 
     .about-gallery {
-        gap: 15px; /* Smaller gap */
+        gap: 15px;
     }
 
     .gallery-item {
-        width: 90%; /* Take up even more width */
-        height: 180px; /* Adjust height further */
+        width: 90%;
+        height: 180px; 
     }
 
     .about-story {
@@ -272,7 +264,6 @@ nav ul li a:hover, .btn:hover {
     }
 }
 
-/* For extra small screens (less than 320px) */
 @media (max-width: 320px) {
     .about-header h2 {
         font-size: 24px;
@@ -283,12 +274,12 @@ nav ul li a:hover, .btn:hover {
     }
 
     .about-gallery {
-        gap: 10px; /* Even smaller gap */
+        gap: 10px; 
     }
 
     .gallery-item {
-        width: 100%; /* Take up full width */
-        height: 150px; /* Further adjust height */
+        width: 100%; 
+        height: 150px; 
     }
 
     .about-story {
@@ -357,61 +348,59 @@ nav ul li a:hover, .btn:hover {
 .btn:hover {
     background: #c0392b;
 }
-/* For mobile screens (max-width: 480px) */
 @media (max-width: 480px) {
     .chefs {
-        justify-content: center; /* Center chefs for smaller screens */
-        gap: 20px; /* More space between chef profiles */
+        justify-content: center; 
+        gap: 20px; 
     }
 
     .chef {
-        width: 150px; /* Make each chef profile smaller */
+        width: 150px; 
     }
 
     .chef img {
-        height: 180px; /* Adjust image height */
+        height: 180px; 
     }
 
     .chef h4 {
-        font-size: 18px; /* Smaller font size for names */
+        font-size: 18px; 
     }
 
     .chef p {
-        font-size: 14px; /* Smaller font size for descriptions */
+        font-size: 14px;
     }
 
     .btn2 {
-        font-size: 14px; /* Adjust button font size */
-        padding: 10px 15px; /* Adjust padding for button */
+        font-size: 14px;
+        padding: 10px 15px; 
     }
 }
 
-/* For extra small screens (max-width: 320px) */
 @media (max-width: 320px) {
     .chefs {
-        flex-direction: column; /* Stack chef profiles vertically */
-        align-items: center; /* Center them */
+        flex-direction: column; 
+        align-items: center; 
     }
 
     .chef {
-        width: 70%; /* Take full width on very small screens */
+        width: 70%; 
     }
 
     .chef img {
-        height: 150px; /* Adjust height for images */
+        height: 150px; 
     }
 
     .chef h4 {
-        font-size: 16px; /* Smaller font size for names */
+        font-size: 16px; 
     }
 
     .chef p {
-        font-size: 12px; /* Smaller font size for descriptions */
+        font-size: 12px; 
     }
 
     .btn2 {
-        font-size: 12px; /* Adjust button font size */
-        padding: 8px 12px; /* Adjust padding for button */
+        font-size: 12px; 
+        padding: 8px 12px; 
     }
 }
 
@@ -482,7 +471,6 @@ nav ul li a:hover, .btn:hover {
     font-weight: bold;
     color: #e74c3c;
 }
-/* Map Section Styles */
 .map {
     padding: 60px 0;
     text-align: center;
@@ -577,68 +565,67 @@ nav ul li a:hover, .btn:hover {
     .contact-info {
         flex-direction: column;
         gap: 20px;
-        align-items: center; /* Stack items vertically and center */
+        align-items: center; 
     }
 
     .contact-details {
-        font-size: 14px; /* Smaller font size for mobile */
-        text-align: center; /* Center contact details */
+        font-size: 14px;
+        text-align: center; 
     }
 
     .contact-header h2 {
-        font-size: 26px; /* Smaller header font size for mobile */
-        margin-bottom: 20px; /* Reduced margin for better spacing */
+        font-size: 26px;
+        margin-bottom: 20px; 
     }
 
     .contact-form form {
-        max-width: 90%; /* Make form wider on mobile */
-        margin-top: 20px; /* Add space at the top */
+        max-width: 90%; 
+        margin-top: 20px; 
     }
 
     .contact-form input,
     .contact-form textarea {
-        font-size: 14px; /* Smaller font size for inputs */
-        padding: 8px; /* Reduced padding for smaller screens */
+        font-size: 14px;
+        padding: 8px; 
     }
 
     .contact-form button {
-        font-size: 14px; /* Smaller button font size */
-        padding: 8px 16px; /* Adjust button padding */
+        font-size: 14px;
+        padding: 8px 16px; 
     }
 
     .contact-info {
-        margin-bottom: 20px; /* Adjust bottom margin for smaller screens */
+        margin-bottom: 20px;
     }
 }
 
-/* For extra small screens (max-width: 320px) */
 @media (max-width: 320px) {
     .contact-info {
-        gap: 15px; /* Reduce gap between items */
+        gap: 15px; 
     }
 
     .contact-details {
-        font-size: 12px; /* Further reduce font size */
-        text-align: center; /* Keep text centered */
+        font-size: 12px; 
+        text-align: center; 
     }
 
     .contact-header h2 {
-        font-size: 22px; /* Further reduce header font size */
-        margin-bottom: 15px; /* Adjust margin */
+        font-size: 22px; 
+        margin-bottom: 15px; 
     }
 
     .contact-form form {
-        max-width: 95%; /* Increase form width for extra small screens */
+        max-width: 95%;
     }
 
     .contact-form input,
     .contact-form textarea {
-        font-size: 12px; /* Further reduce font size for inputs */
+        font-size: 12px; 
     }
 
     .contact-form button {
-        font-size: 12px; /* Smallest font size for buttons */
-        padding: 6px 12px; /* Smaller padding for buttons */
+        font-size: 12px; 
+        padding: 6px 12px; 
     }
 }
 .footer {
@@ -703,7 +690,6 @@ nav ul li a:hover, .btn:hover {
     margin: 0;
     font-size: 14px;
 }
-/* Butoni për të hapur formën */
 .reserve-btn {
     background-color: #d32f2f;
     color: white;
@@ -714,7 +700,6 @@ nav ul li a:hover, .btn:hover {
     border-radius: 5px;
 }
 
-/* Kontejneri i formës */
 .reservation-form {
     display: none; 
     position: fixed;
@@ -728,7 +713,6 @@ nav ul li a:hover, .btn:hover {
     z-index: 100;
 }
 
-/* Dizajni i formës në formë katrore */
 #reservationForm {
     background: white;
     padding: 30px;
@@ -738,7 +722,6 @@ nav ul li a:hover, .btn:hover {
     text-align: center;
 }
 
-/* Stilizimi i inputeve */
 #reservationForm input {
     width: 90%;
     padding: 10px;
@@ -748,7 +731,6 @@ nav ul li a:hover, .btn:hover {
     font-size: 16px;
 }
 
-/* Stilizimi i butonit Submit */
 #reservationForm button {
     width: 100%;
     background-color: #d32f2f;
@@ -761,7 +743,6 @@ nav ul li a:hover, .btn:hover {
     margin-top: 10px;
 }
 
-/* Butoni i mbylljes */
 .close-btn {
     background-color: #555;
     color: white;
