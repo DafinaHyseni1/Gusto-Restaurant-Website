@@ -521,6 +521,28 @@ function submitReservation(event) {
     closeReservationForm();
 }
 
+function openReservationForm() {
+    document.getElementById("reservation-form").classList.add("active");
+}
+
+function closeReservationForm() {
+    document.getElementById("reservation-form").classList.remove("active");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("reservation-form");
+    const box = document.querySelector("#reservation-form .container");
+
+    modal.addEventListener("click", function (e) {
+        if (!box.contains(e.target)) {
+            closeReservationForm();
+        }
+    });
+
+    box.addEventListener("click", function (e) {
+        e.stopPropagation();
+    });
+});
 
 function toggleMenu() {
     const menu = document.querySelector(".nav-links");
@@ -553,4 +575,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     setInterval(showNextSlide, 3000);
+});
+
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.querySelector("nav ul");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
 });
