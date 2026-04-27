@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dish Details</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body class="dish-page">
+
+<div class="dish-container">
+<button onclick="goBack()" class="back-btn">← Back</button>
+
+    <div class="dish-hero">
+        <img id="dish-img" src="" alt="Dish Image">
+
+        <div class="dish-overlay">
+            <h1 id="dish-title"></h1>
+            <p id="dish-tagline"></p>
+        </div>
+    </div>
+
+    <div class="dish-content">
+
+        <div class="ingredients">
+            <h2>Ingredients</h2>
+            <ul id="dish-ingredients"></ul>
+        </div>
+
+        <div class="preparation">
+            <h2>Preparation</h2>
+            <p id="dish-preparation"></p>
+
+            <div id="extra-info" class="extra-info"></div>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html> 
