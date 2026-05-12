@@ -465,16 +465,39 @@ document.addEventListener("click", function (e) {
 let reservations = [];
 
 function openReservationForm() {
-    const form = document.getElementById('reservation-form');
-    if (form) form.style.display = 'flex';
+
+    const modal = document.getElementById("reservation-form");
+
+    modal.classList.add("active");
+
+    document.body.style.overflow = "hidden";
 }
 
 function closeReservationForm() {
-    const form = document.getElementById('reservation-form');
-    if (form) form.style.display = 'none';
+
+    const modal = document.getElementById("reservation-form");
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow = "auto";
 }
 
-function submitReservation(event) {
+document.addEventListener("DOMContentLoaded", () => {
+
+    const modal = document.getElementById("reservation-form");
+    const box = document.querySelector(".reservation-form .container");
+
+    modal.addEventListener("click", (e) => {
+
+        if (!box.contains(e.target)) {
+            closeReservationForm();
+        }
+    });
+
+});
+
+function submitReservation(event){
+
     event.preventDefault();
 
     const date = document.getElementById('date').value;
@@ -485,7 +508,8 @@ function submitReservation(event) {
 
     const hour = parseInt(time.split(':')[0]);
 
-    if (hour >= 1 && hour < 7) {
+    if(hour >= 1 && hour < 7){
+
         alert("Sorry, we are open 7 AM - 1 AM.");
         return;
     }
@@ -494,31 +518,45 @@ function submitReservation(event) {
         r.date === date && r.time === time
     );
 
-    if (isBooked) {
+    if(isBooked){
+
         alert("This time is already booked.");
         return;
     }
 
-    reservations.push({ date, time, guests, fullName, email });
+    reservations.push({
+        date,
+        time,
+        guests,
+        fullName,
+        email
+    });
 
-    if (typeof emailjs !== "undefined") {
+    if(typeof emailjs !== "undefined"){
+
         emailjs.send("service_n0t9o5r", "template_btukfdh", {
+
             to_name: fullName,
             email: email,
             date,
             time,
             guests
-        })
-        .then(() => {
+
+        }).then(() => {
+
             alert(`Reservation confirmed! Email sent to ${email}`);
-        })
-        .catch(err => {
+
+        }).catch((err) => {
+
             console.error(err);
+
             alert("Reservation saved, but email failed");
         });
     }
 
     closeReservationForm();
+
+    document.getElementById("reservationForm").reset();
 }
 
 function openReservationForm() {
