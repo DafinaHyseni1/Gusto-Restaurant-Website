@@ -1029,20 +1029,39 @@ nav ul li a:hover, .btn:hover {
         border-radius: 22px;
         padding: 22px;
         max-height: unset;
+        background: #fff;
     }
 
     #reservationForm h3{
         font-size: 24px;
+        color: #d32f2f;
+    }
+
+    #reservationForm label{
+        color: #333;
     }
 
     #reservationForm input{
         padding: 13px;
         font-size: 14px;
+        background: #fff;
+        color: #333;
+        border: 1px solid #ddd;
     }
 
-    #reservationForm button{
-        padding: 13px;
-        font-size: 15px;
+    #reservationForm input:focus{
+        border-color: #d32f2f;
+        box-shadow: 0 0 10px rgba(211,47,47,0.15);
+    }
+
+    .reserve-submit{
+        background: #d32f2f;
+        color: white;
+    }
+
+    .close-btn{
+        background: #eee;
+        color: #333;
     }
 }
 
