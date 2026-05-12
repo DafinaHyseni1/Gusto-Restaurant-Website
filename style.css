@@ -880,7 +880,6 @@ nav ul li a:hover, .btn:hover {
         padding: 6px 12px; 
     }
 }
-
 .reserve-btn {
     background-color: #d32f2f;
     color: white;
@@ -891,121 +890,160 @@ nav ul li a:hover, .btn:hover {
     border-radius: 5px;
 }
 
-.reservation-form {
-    display: none;
+.reservation-form{
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1000;
-
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
+    display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.reservation-form.active {
-    display: flex;
-}
-
-.reservation-form .container {
-    background: white;
-    width: 320px;
-    max-width: 95%;
-
-    max-height: 85vh;
-    overflow-y: auto;
-
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.35s ease;
+    z-index: 9999;
 }
 
-#reservationForm {
+.reservation-form.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.reservation-form .container{
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: popup 0.35s ease;
+}
+
+.reservation-form .container::-webkit-scrollbar{
+    width: 6px;
+}
+
+.reservation-form .container::-webkit-scrollbar-thumb{
+    background: #d32f2f;
+    border-radius: 20px;
+}
+
+#reservationForm{
     width: 100%;
 }
 
-#reservationForm h3 {
-    color: #e74c3c;
-    margin-bottom: 15px;
+#reservationForm h3{
+    text-align: center;
+    font-size: 28px;
+    color: #d32f2f;
+    margin-bottom: 25px;
 }
 
-#reservationForm label {
-    color: #444;
-    font-weight: 500;
+#reservationForm label{
     display: block;
-    margin-top: 10px;
+    margin-bottom: 8px;
+    margin-top: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
 }
 
-#reservationForm input {
+#reservationForm input{
     width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
     box-sizing: border-box;
 }
 
-#reservationForm button {
+#reservationForm input:focus{
+    border-color: #d32f2f;
+    box-shadow: 0 0 10px rgba(211,47,47,0.15);
+}
+
+#reservationForm button{
     width: 100%;
-    background-color: #d32f2f;
-    color: white;
     border: none;
-    padding: 12px;
+    padding: 14px;
+    border-radius: 12px;
+    cursor: pointer;
     font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.close-btn {
-    background-color: #555;
+.reserve-submit{
+    margin-top: 24px;
+    background: #d32f2f;
     color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
 }
 
-@media (max-width: 768px) {
-    @media (max-width: 768px) {
-    .reservation-form {
-        align-items: center;
-        justify-content: center;
-        padding: 15px;
+.reserve-submit:hover{
+    background: #b71c1c;
+    transform: translateY(-2px);
+}
+
+.close-btn{
+    margin-top: 12px;
+    background: #eee;
+    color: #333;
+}
+
+.close-btn:hover{
+    background: #ddd;
+}
+
+@keyframes popup{
+    from{
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
     }
 
-    .reservation-form .container {
-        width: 92%;
-        max-width: 360px;
-        max-height: 80vh;
+    to{
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+    .reservation-form{
+        align-items: flex-start;
+        padding-top: 40px;
+        padding-bottom: 40px;
         overflow-y: auto;
-        position: relative;
-        transform: none;
-        top: 0px;
-        left: auto;
-        scrollbar-width: thin;
-        scrollbar-color: #e74c3c #1a1a1a;
     }
 
-    .reservation-form .container::-webkit-scrollbar {
-        width: 8px;
+    .reservation-form .container{
+        width: 100%;
+        max-width: 100%;
+        border-radius: 22px;
+        padding: 22px;
+        max-height: unset;
     }
 
-    .reservation-form .container::-webkit-scrollbar-track {
-        background: #1a1a1a;
-        border-radius: 10px;
+    #reservationForm h3{
+        font-size: 24px;
     }
 
-    .reservation-form .container::-webkit-scrollbar-thumb {
-        background: #e74c3c;
-        border-radius: 10px;
+    #reservationForm input{
+        padding: 13px;
+        font-size: 14px;
     }
 
-    .reservation-form .container::-webkit-scrollbar-thumb:hover {
-        background: #ff5a47;
+    #reservationForm button{
+        padding: 13px;
+        font-size: 15px;
     }
-}
 }
 
 body.dish-page {
