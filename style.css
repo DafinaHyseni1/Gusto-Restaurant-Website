@@ -979,6 +979,10 @@ nav ul li a:hover, .btn:hover {
     font-size: 16px;
     font-weight: 600;
     transition: 0.3s;
+    background-color: #d32f2f;
+    margin-bottom: 5px;
+    margin-top:10px;
+    color: white;
 }
 
 .reserve-submit{
@@ -1062,6 +1066,15 @@ nav ul li a:hover, .btn:hover {
     .close-btn{
         background: #eee;
         color: #333;
+
+    }
+    
+      #reservationForm button{
+        padding: 13px;
+        font-size: 15px;
+        background-color: #d32f2f;
+        margin-bottom: 5px;
+        color: white;
     }
 }
 
